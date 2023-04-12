@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>BioMApp</title>
+	<link rel="stylesheet" type="text/css" href="bibliotecas/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bibliotecas/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/sb-admin.min.css">
+</head>
+<body class="bg-dark fixed-nav sticky-footer" id="page-top">
+
+	<!-- Navegacao -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+		
+		<a class="navbar-brand" href="index.html">Biogas Modeling Application</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCurso">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div id="navbarCurso" class="collapse navbar-collapse">
+			<ul class="navbar-nav navbar-sidenav">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">
+						<i class="fa fa-fw fa-gears"></i>
+						<span class="nav-link-text">Projeto do Modelo</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="analise.html">
+						<i class="fa fa-fw fa-bar-chart"></i>
+						<span class="nav-link-text">Análise de Dados</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="examples.html">
+						<i class="fa fa-fw fa-table"></i>
+						<span class="nav-link-text">Exemplos de Planilhas</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">
+						<i class="fa fa-fw fa-envelope"></i>
+						<span class="nav-link-text">Sobre o BioMApp</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</nav>	
+
+
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item">
+					Análise de Dados
+				</li>
+			</ol>
+
+			<div class="card w-50">
+				<div class="card-header">Arquivos</div>
+				<div class="card-body">
+
+					<form>
+						<label for="file">Indique o arquivo com os <b>dados históricos</b> para análise:</label>
+						<input type="file" class="form-control btn-sm" id="fileDados" name="fileDados">
+
+						<label for="file" class="mt-3">Indique o arquivo dos <b>coeficientes do modelo</b>:</label>
+						<input type="file" class="form-control btn-sm" id="fileModelo" name="fileModelo">
+					</form>
+					
+					<button class="btn btn-primary btn-sm mt-3" id="analisaDados">Analisa Dados Históricos</button>
+
+				</div>
+			</div>
+
+
+			<div class="card w-100 mt-3">
+				<div class="card-header">Resultado da Análise</div>
+				<div class="card-body">
+
+			<div class="card w-75 mt-3">
+				<canvas id="analise-chart"></canvas>
+			</div>
+
+					<table id="tableModelo" class="table table-borderless table-striped table-earning small">
+						<thead>
+							<tr>
+								<th style="width: 10%">Data</th>
+								<th style="width: 10%">Hora</th>
+								<th>Ocorrência</th>
+							</tr>
+						</thead>
+						<tbody id="testBody"></tbody>
+					</table>
+
+					<button type="button" id="downloadResultAnalise" class="btn btn-primary btn-sm">Download do Resultado da Análise</button>
+
+				</div>
+			</div>
+
+			<br>
+
+			<footer class="sticky-footer">
+			<div class="container">
+				<div class="text-center">
+					<small>Copyright &copy; 2023 - BioMApp</small>
+				</div>
+			</div>
+			
+		</footer>
+	</div>
+
+	<script src="bibliotecas/jquery/jquery.min.js"></script>
+	<script src="bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="bibliotecas/jquery-easing/jquery.easing.min.js"></script>
+	<script src="js/sb-admin.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@sgratzl/chartjs-chart-boxplot@3.6.0/build/index.umd.min.js"></script>
+
+	<!-- <script type="text/javascript" src="https://unpkg.com/@sgratzl/chartjs-chart-boxplot@3.6.0/build/index.umd.min.js"></script> -->
+	<script src="js/analise.js"></script>
+</body>
+</html>
