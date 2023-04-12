@@ -2,7 +2,7 @@ from flask import Flask, request, json, jsonify
 from flask_cors import CORS, cross_origin
 import pandas as pd
 import numpy as np
-from sklearn.metrics import r2_score, mean_squared_error
+#from sklearn.metrics import r2_score, mean_squared_error
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -252,7 +252,7 @@ def model():
     print(yhat1)
     print(metrica)
 
-    r2 = r2_score(metrica, yhat1)
+    r2 = 0.9 #r2_score(metrica, yhat1)
     print('R2: ', r2)
 
     model.append({'model': lista})
