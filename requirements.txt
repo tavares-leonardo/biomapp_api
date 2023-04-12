@@ -1,1 +1,5 @@
 Flask==2.2.2
+flask-cors
+numpy
+pandas
+scikit-learn
